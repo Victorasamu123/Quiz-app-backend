@@ -4,4 +4,9 @@ const signup = (req,res)=>{
         {name:"asamu victor",age:23,company:"google"}
     ]})
 }
-module.exports={signup};
+
+const signuppost=(req,res)=>{
+    console.log(req.body)
+    res.send({message:"sucess"})
+}
+module.exports={signup,signuppost};
