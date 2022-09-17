@@ -18,6 +18,15 @@ signupSchema.pre("save",function(next){
         }
     })
 })
-
+signupSchema.methods.validatePassword = function(password,callback){
+    bcrypt.compare(password,this.password,(err,same)=>{
+        console.log(same)
+        if(!err){
+            callback(err,same)
+        }else{
+            next()
+        }
+    })
+}
 const signUpModel= mongoose.model("signup_collection",signupSchema);
 module.exports=signUpModel;
