@@ -4,7 +4,8 @@ const signupSchema= mongoose.Schema({
     firstname:{required:true,type:String},
     lastname:{required:true,type:String},
     email:{required:true,type:String,unique:true},
-    password:{required:true,type:String}
+    password:{required:true,type:String},
+    status:{required:true,type:Boolean}
 });
 
 let saltRound = 10;
